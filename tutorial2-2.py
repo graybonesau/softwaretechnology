@@ -1,17 +1,4 @@
-"""Tutorial 2-2: Point and Shape classes
-
-Requirements implemented:
-- Point class with x and y coordinates
-- Shape base class with leftTop Point and ordered points list
-- calculatePoints(), calculateArea(), calculatePerimeter(), move() methods
-- A concrete Rectangle subclass as an example shape
-
-The script includes a small interactive demo that reads the left-top
-coordinates from the keyboard and demonstrates the required methods.
-"""
-
 from typing import List
-
 
 class Point:
 	"""Represents a point in 2D coordinate system."""

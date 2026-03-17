@@ -1,5 +1,3 @@
-#Sorting Algorithms Demo
-# Animation speeds (milliseconds)
 SPEEDS = {
 	"Very Slow": 1000,
 	"Slow": 500,
@@ -7,7 +5,7 @@ SPEEDS = {
 	"Fast": 50,
 	"Very Fast": 10
 }
-# Algorithm descriptions
+
 ALGORITHM_INFO = {
 	"Bubble Sort": "Repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.",
 	"Selection Sort": "Divides the input into a sorted and unsorted region, repeatedly selects the smallest element from the unsorted region.",
@@ -94,7 +92,7 @@ class SortingAlgorithms:
 			self.merge_sort(left, mid)
 			self.merge_sort(mid + 1, right)
 			self.merge(left, mid, right)
-			# after merging the segment [left..right] is sorted
+			
 			for idx in range(left, right + 1):
 				self.visualizer.mark_sorted(idx)
 
@@ -124,7 +122,6 @@ class SortingAlgorithms:
 			j += 1
 			k += 1
 
-# Sorting Visualiser Main Program
 import os
 import random
 import time

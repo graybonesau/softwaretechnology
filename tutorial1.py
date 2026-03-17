@@ -18,4 +18,4 @@ def runBirthdayParadox(inputInteger):
 	for i in range(inputInteger):
 		noShareProbability *= (365 - i) / 365
 	shareProbability = 1.0 - noShareProbability
-	print("There is a {:.2f}% chance that at least two people share a birthday in a group of {} people.".format(shareProbability * 100, inputInteger))
+	print("There is a {:.2f}% chance that at least two people are sharing a birthday in a group of {} people.".format(shareProbability * 100, inputInteger))

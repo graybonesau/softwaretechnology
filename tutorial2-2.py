@@ -19,8 +19,6 @@ class Point:
 		return f"Point(x={self.x:.2f}, y={self.y:.2f})"
 
 	def __str__(self):
-		# Friendly string for printing Point attributes.
-		# Print integers without decimals when possible to match sample output.
 		def fmt(n: float) -> str:
 			if float(n).is_integer():
 				return str(int(n))
@@ -63,11 +61,9 @@ class Shape:
 		recompute the vertices (this avoids accumulating floating point drift).
 		"""
 		self.leftTop.move(dx, dy)
-		# If the subclass defines calculatePoints, recalc the vertices
 		try:
 			self.calculatePoints()
 		except NotImplementedError:
-			# If subclass doesn't implement calculatePoints, try shifting existing points
 			for p in self.points:
 				p.move(dx, dy)
 
@@ -90,7 +86,6 @@ class Rectangle(Shape):
 		y = self.leftTop.y
 		w = self.width
 		h = self.height
-		# Order: top-left, top-right, bottom-right, bottom-left
 		self.points = [
 			Point(x, y),
 			Point(x + w, y),
@@ -123,7 +118,6 @@ class Circle(Shape):
 		x = self.leftTop.x
 		y = self.leftTop.y
 		r = self.radius
-		# bounding box for the circle has width and height of 2*r
 		self.points = [
 			Point(x, y),
 			Point(x + 2 * r, y),
@@ -226,7 +220,6 @@ if __name__ == "__main__":
 				break
 
 			if choice == "r":
-				# Expect: x y height width in one line (or separated)
 				raw = input("Coordinate(leftTop), height and width: ")
 				parts = raw.strip().split()
 				if len(parts) != 4:
